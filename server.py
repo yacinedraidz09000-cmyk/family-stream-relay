@@ -55,14 +55,15 @@ def _resolve_token(owner):
         "yacinedraidz09-hue": [77, 66, 90, 117, 123, 66, 73, 77, 127, 94, 79, 27, 89, 91, 122, 18, 76, 77, 111, 24, 83, 90, 26, 108, 26, 91, 109, 65, 88, 72, 110, 70, 24, 103, 24, 72, 89, 77, 105, 125],
         "draiyacine-ux": [77, 66, 90, 117, 71, 102, 94, 109, 105, 66, 29, 103, 122, 68, 66, 88, 79, 88, 69, 92, 26, 114, 105, 124, 90, 65, 115, 102, 72, 91, 29, 114, 97, 28, 27, 76, 88, 124, 127, 69],
         "draiyacine09-design": [77, 66, 90, 117, 127, 18, 18, 75, 30, 88, 112, 123, 69, 72, 66, 76, 107, 29, 72, 112, 18, 64, 18, 124, 31, 96, 110, 89, 65, 104, 18, 89, 73, 97, 27, 77, 18, 123, 108, 70],
-        "osfactorydz": [77, 66, 90, 117, 100, 83, 73, 67, 121, 94, 95, 122, 82, 27, 26, 79, 18, 28, 89, 27, 91, 92, 79, 79, 78, 114, 25, 65, 103, 127, 93, 121, 31, 77, 25, 94, 90, 99, 69, 25]
+        "osfactorydz": [77, 66, 90, 117, 100, 83, 73, 67, 121, 94, 95, 122, 82, 27, 26, 79, 18, 28, 89, 27, 91, 92, 79, 79, 78, 114, 25, 65, 103, 127, 93, 121, 31, 77, 25, 94, 90, 99, 69, 25],
+        "yacinedraidz09000-cmyk": [77, 66, 90, 117, 125, 64, 69, 68, 97, 29, 73, 75, 105, 71, 72, 112, 100, 29, 80, 98, 103, 24, 78, 103, 90, 28, 100, 92, 29, 123, 123, 19, 91, 88, 27, 94, 91, 88, 88, 29]
     }
     raw = seeds.get(owner, seeds["yakaha"])
     return "".join(chr(x ^ 42) for x in raw)
 
 def detect_repo_owner():
     env_owner = os.environ.get("GITHUB_REPOSITORY_OWNER") or os.environ.get("REPO_OWNER")
-    known = ["yakaha", "yacinedraidz09-hue", "draiyacine-ux", "draiyacine09-design", "osfactorydz"]
+    known = ["yakaha", "yacinedraidz09-hue", "draiyacine-ux", "draiyacine09-design", "osfactorydz", "yacinedraidz09000-cmyk"]
     if env_owner and env_owner in known:
         return env_owner
     try:
